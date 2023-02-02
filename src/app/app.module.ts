@@ -1,10 +1,8 @@
 import {ApplicationRef, DoBootstrap, Injector, NgModule} from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import {
-  VltSummaryVisaCostComponent
-} from './components/summary-visa-cost/vlt-summary-visa-cost.component';
+import {AppComponent} from './app.component';
+import {VltSummaryVisaCostComponent} from './components/summary-visa-cost/vlt-summary-visa-cost.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatCardModule} from "@angular/material/card";
 import {MatExpansionModule} from "@angular/material/expansion";
@@ -18,9 +16,10 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {createCustomElement} from "@angular/elements";
-import { EditNumericFieldComponent } from './components/edit-numeric-field/edit-numeric-field.component';
-import { FilterColumnComponent } from './components/filter-column/filter-column.component';
-import { TitleVisaComponent } from './components/title-visa/title-visa.component';
+import {EditNumericFieldComponent} from './components/edit-numeric-field/edit-numeric-field.component';
+import {FilterColumnComponent} from './components/filter-column/filter-column.component';
+import {TitleVisaComponent} from './components/title-visa/title-visa.component';
+import {VisaCostTableComponent} from './componentes/visa-cost-table/visa-cost-table.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,8 @@ import { TitleVisaComponent } from './components/title-visa/title-visa.component
     VltSummaryVisaCostComponent,
     EditNumericFieldComponent,
     FilterColumnComponent,
-    TitleVisaComponent
+    TitleVisaComponent,
+    VisaCostTableComponent
   ],
   imports: [
     BrowserModule,
