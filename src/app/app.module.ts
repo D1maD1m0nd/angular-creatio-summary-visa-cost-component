@@ -20,12 +20,14 @@ import {MatIconModule} from "@angular/material/icon";
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {createCustomElement} from "@angular/elements";
 import { EditNumericFieldComponent } from './components/edit-numeric-field/edit-numeric-field.component';
+import { FilterColumnComponent } from './components/filter-column/filter-column.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VltSummaryVisaCostComponent,
-    EditNumericFieldComponent
+    EditNumericFieldComponent,
+    FilterColumnComponent
   ],
   imports: [
     BrowserModule,
