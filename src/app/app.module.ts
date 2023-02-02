@@ -44,7 +44,7 @@ import { EditNumericFieldComponent } from './components/edit-numeric-field/edit-
     MatInputModule
   ],
   providers: [],
-  //bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
   entryComponents: [VltSummaryVisaCostComponent]
 })
 export class AppModule implements DoBootstrap {
