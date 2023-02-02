@@ -19,7 +19,7 @@ import {createCustomElement} from "@angular/elements";
 import {EditNumericFieldComponent} from './components/edit-numeric-field/edit-numeric-field.component';
 import {FilterColumnComponent} from './components/filter-column/filter-column.component';
 import {TitleVisaComponent} from './components/title-visa/title-visa.component';
-import {VisaCostTableComponent} from './componentes/visa-cost-table/visa-cost-table.component';
+import {VisaCostTableComponent} from "./components/visa-cost-table/visa-cost-table.component";
 
 @NgModule({
   declarations: [
