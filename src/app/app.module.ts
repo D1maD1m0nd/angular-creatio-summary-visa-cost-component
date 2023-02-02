@@ -2,7 +2,9 @@ import {ApplicationRef, DoBootstrap, Injector, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { SummaryVisaCostComponentComponent } from './components/summary-visa-cost-component/summary-visa-cost-component.component';
+import {
+  VltSummaryVisaCostComponent
+} from './components/summary-visa-cost/vlt-summary-visa-cost.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatCardModule} from "@angular/material/card";
 import {MatExpansionModule} from "@angular/material/expansion";
@@ -17,11 +19,13 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {createCustomElement} from "@angular/elements";
+import { EditNumericFieldComponent } from './components/edit-numeric-field/edit-numeric-field.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SummaryVisaCostComponentComponent
+    VltSummaryVisaCostComponent,
+    EditNumericFieldComponent
   ],
   imports: [
     BrowserModule,
@@ -41,13 +45,13 @@ import {createCustomElement} from "@angular/elements";
   ],
   providers: [],
   //bootstrap: [AppComponent]
-  entryComponents: [SummaryVisaCostComponentComponent]
+  entryComponents: [VltSummaryVisaCostComponent]
 })
 export class AppModule implements DoBootstrap {
   constructor(private injector: Injector) {
   }
   ngDoBootstrap(appRef: ApplicationRef): void {
-    const el = createCustomElement(SummaryVisaCostComponentComponent, { injector: this.injector });
+    const el = createCustomElement(VltSummaryVisaCostComponent, { injector: this.injector });
     customElements.define('vlt-summary-visa-cost-component', el);
   }
 }
