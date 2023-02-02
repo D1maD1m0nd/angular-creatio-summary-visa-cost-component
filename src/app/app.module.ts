@@ -10,7 +10,6 @@ import {MatCardModule} from "@angular/material/card";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatMenuModule} from "@angular/material/menu";
-import {ɵEmptyOutletComponent} from "@angular/router";
 import {MatSortModule} from "@angular/material/sort";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -21,13 +20,15 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
 import {createCustomElement} from "@angular/elements";
 import { EditNumericFieldComponent } from './components/edit-numeric-field/edit-numeric-field.component';
 import { FilterColumnComponent } from './components/filter-column/filter-column.component';
+import { TitleVisaComponent } from './components/title-visa/title-visa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VltSummaryVisaCostComponent,
     EditNumericFieldComponent,
-    FilterColumnComponent
+    FilterColumnComponent,
+    TitleVisaComponent
   ],
   imports: [
     BrowserModule,
