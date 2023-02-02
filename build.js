@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const concat = require('concat');
-const componentPath =  './dist/summary-visa-cost-component/summary-visa-cost-component.js';
+const componentPath =  './dist/summary-visa-cost-component/vlt-summary-visa-cost-component.js';
 
 (async function build() {
   const files = [
