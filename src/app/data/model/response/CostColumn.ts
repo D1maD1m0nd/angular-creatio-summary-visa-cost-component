@@ -2,7 +2,7 @@ export interface ICostColumn {
     Name: string,
     ItemCostKey: string,
 
-    Checked?: boolean
+    Checked: boolean
 
-    Visible?: boolean
+  Visible: boolean
 }
