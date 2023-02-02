@@ -12,10 +12,10 @@
   vertical-align: middle;
 }
 
-.mat-row,
-.mat-header-row {
-  display: table-row;
-}
+//.mat-row,
+//.mat-header-row {
+//  display: table-row;
+//}
 
 table th {
   position: relative;
@@ -26,20 +26,7 @@ table th:hover .resize-handle {
   transition: .3s ease-in-out;
 }
 
-.resize-handle {
-  display: inline-block;
-  border-right: 2px solid lightgray;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  cursor: col-resize;
-  opacity: 0;
-}
 
-.resize-handle:hover {
-  width: 20px;
-}
 
 .cdk-drag-preview {
   box-sizing: border-box;

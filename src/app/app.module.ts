@@ -20,6 +20,7 @@ import {EditNumericFieldComponent} from './components/edit-numeric-field/edit-nu
 import {FilterColumnComponent} from './components/filter-column/filter-column.component';
 import {TitleVisaComponent} from './components/title-visa/title-visa.component';
 import {VisaCostTableComponent} from "./components/visa-cost-table/visa-cost-table.component";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {VisaCostTableComponent} from "./components/visa-cost-table/visa-cost-tab
     MatMenuModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

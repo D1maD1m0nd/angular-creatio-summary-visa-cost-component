@@ -13,20 +13,20 @@
     <ng-container *ngIf="column.Visible">
       <mat-header-cell
         *matHeaderCellDef
+        [disabled]="sortingDisable"
         cdkDrag
         cdkDragLockAxis="x"
-        [disabled]="sortingDisable"
         mat-sort-header={{column.ItemCostKey}}>
         {{ column.Name }}
-        <button class="grid-view-header-menu"
-                (click)="sortingDisable = true"
+        <button (click)="sortingDisable = true"
                 (onMenuClose)="sortingDisable = false"
-                mat-icon-button [matMenuTriggerFor]="menu">
+                [matMenuTriggerFor]="menu"
+                class="grid-view-header-menu" mat-icon-button>
           <mat-icon>menu</mat-icon>
         </button>
         <mat-menu #menu>
-          <button mat-menu-item (click)="groupBy($event, column.ItemCostKey);">Сгруппировать</button>
-          <button mat-menu-item (click)="unGroupBy($event, column.ItemCostKey);">Разгруппировать</button>
+          <button (click)="groupBy($event, column.ItemCostKey);" mat-menu-item>Сгруппировать</button>
+          <button (click)="unGroupBy($event, column.ItemCostKey);" mat-menu-item>Разгруппировать</button>
         </mat-menu>
       </mat-header-cell>
       <mat-cell *matCellDef="let element">
@@ -58,8 +58,8 @@
     </mat-cell>
   </ng-container>
 
-  <mat-row class="mat-cursor" *matRowDef="let row; columns: ['groupHeader']; when: isGroup"
-           (click)="groupHeaderClick(row)"></mat-row>
+  <mat-row (click)="groupHeaderClick(row)" *matRowDef="let row; columns: ['groupHeader']; when: isGroup"
+           class="mat-cursor"></mat-row>
 
 </mat-table>
 

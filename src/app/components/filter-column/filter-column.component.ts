@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { ICostColumn } from 'src/app/data/model/response/CostColumn';
+import {ICostColumn} from 'src/app/data/model/response/CostColumn';
 import {FilteringColumnService} from "../../services/filtering-column.service";
 
 @Component({

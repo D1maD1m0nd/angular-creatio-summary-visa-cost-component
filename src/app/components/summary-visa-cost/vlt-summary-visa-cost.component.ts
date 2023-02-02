@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ApiService} from "../../services/api.service";
+import {IVisaCostSummary} from "../../data/model/response/VisaCostSummary";
 
 @Component({
   selector: 'vlt-summary-visa-cost-component',
@@ -9,6 +10,10 @@ import {ApiService} from "../../services/api.service";
 export class VltSummaryVisaCostComponent implements OnInit {
   constructor(public apiService: ApiService) {
   }
+
+  @Input() VisaCostSummary: IVisaCostSummary
+  @Output() VisaCostSummarySaveEmitter = new EventEmitter<Map<string, number>>();
+  VisaCostSummarySave: Map<string, number> = new Map<string, number>()
 
   SendSaveDataIntoServer() {
     this.apiService.PostSaveDataBudgetDetail().subscribe((i) => {

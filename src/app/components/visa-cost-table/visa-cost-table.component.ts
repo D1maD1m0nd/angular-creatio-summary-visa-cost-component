@@ -6,6 +6,7 @@ import {FilteringColumnService} from "../../services/filtering-column.service";
 import {Sort} from "@angular/material/sort";
 import {CdkDragDrop, moveItemInArray} from "@angular/cdk/drag-drop";
 import {ApiService} from "../../services/api.service";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'vlt-visa-cost-table',
