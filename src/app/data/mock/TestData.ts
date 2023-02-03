@@ -1,6 +1,4 @@
-import {IVisaCostSummary} from "../model/response/VisaCostSummary";
-
-export const data: IVisaCostSummary = {
+export const data = {
     "GetVisaItemsResult": {
         "CostItemColumn": [
             {

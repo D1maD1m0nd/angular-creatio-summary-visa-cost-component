@@ -1,65 +1,65 @@
 <mat-table
-  (cdkDropListDropped)="tableDrop($event)"
-  (matSortChange)="sortData($event)"
-  [dataSource]="dataSource"
-  cdkDropList
-  cdkDropListOrientation="horizontal"
-  class="mat-elevation-z8"
-  id="visa-cost-item"
-  matSort>
+    (cdkDropListDropped)="tableDrop($event)"
+    (matSortChange)="sortData($event)"
+    [dataSource]="dataSource"
+    cdkDropList
+    cdkDropListOrientation="horizontal"
+    class="mat-elevation-z8"
+    id="visa-cost-item"
+    matSort>
 
-  <ng-container *ngFor="let column of itemsColumns; let i = index"
-                [matColumnDef]="column.ItemCostKey">
-    <ng-container *ngIf="column.Visible">
-      <mat-header-cell
-        *matHeaderCellDef
-        [disabled]="sortingDisable"
-        cdkDrag
-        cdkDragLockAxis="x"
-        mat-sort-header={{column.ItemCostKey}}>
-        {{ column.Name }}
-        <button (click)="sortingDisable = true"
-                (onMenuClose)="sortingDisable = false"
-                [matMenuTriggerFor]="menu"
-                class="grid-view-header-menu" mat-icon-button>
-          <mat-icon>menu</mat-icon>
-        </button>
-        <mat-menu #menu>
-          <button (click)="groupBy($event, column.ItemCostKey);" mat-menu-item>Сгруппировать</button>
-          <button (click)="unGroupBy($event, column.ItemCostKey);" mat-menu-item>Разгруппировать</button>
-        </mat-menu>
-      </mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        <vlt-edit-numeric-field (outValue)="changeTotalSumPlan($event, element)"
-                                *ngIf="column.ItemCostKey === 'TotalSumPlan';
+    <ng-container *ngFor="let column of itemsColumns; let i = index"
+                  [matColumnDef]="column.ItemCostKey">
+        <ng-container *ngIf="column.Visible">
+            <mat-header-cell
+                *matHeaderCellDef
+                [disabled]="sortingDisable"
+                cdkDrag
+                cdkDragLockAxis="x"
+                mat-sort-header={{column.ItemCostKey}}>
+                {{ column.Name }}
+                <button (click)="sortingDisable = true"
+                        (onMenuClose)="sortingDisable = false"
+                        [matMenuTriggerFor]="menu"
+                        class="grid-view-header-menu" mat-icon-button>
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <mat-menu #menu>
+                    <button (click)="groupBy($event, column.ItemCostKey);" mat-menu-item>Сгруппировать</button>
+                    <button (click)="unGroupBy($event, column.ItemCostKey);" mat-menu-item>Разгруппировать</button>
+                </mat-menu>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <vlt-edit-numeric-field (outValue)="changeTotalSumPlan($event, element)"
+                                        *ngIf="column.ItemCostKey === 'TotalSumPlan';
                         else elseBlock"
-                                [value]="element[column.ItemCostKey]"></vlt-edit-numeric-field>
-        <ng-template #elseBlock>{{ element[column.ItemCostKey]}}</ng-template>
-      </mat-cell>
+                                        [value]="element[column.ItemCostKey]"></vlt-edit-numeric-field>
+                <ng-template #elseBlock>{{ element[column.ItemCostKey]}}</ng-template>
+            </mat-cell>
+        </ng-container>
     </ng-container>
-  </ng-container>
 
-  <mat-header-row #tableHeaderRow
-                  *matHeaderRowDef="displayColumns"
-                  class="tableHeaderRow"></mat-header-row>
-  <mat-row
-    *matRowDef="let row; columns: displayColumns;"
-    [ngClass]="{
+    <mat-header-row #tableHeaderRow
+                    *matHeaderRowDef="displayColumns"
+                    class="tableHeaderRow"></mat-header-row>
+    <mat-row
+        *matRowDef="let row; columns: displayColumns;"
+        [ngClass]="{
         'row-state-negative': row.TotalSumPlan < row.TotalSumPlanYearBranch,
          'row-state-positive': row.TotalSumPlan > row.TotalSumPlanYearBranch}"
-  ></mat-row>
+    ></mat-row>
 
-  <ng-container matColumnDef="groupHeader">
-    <mat-cell *matCellDef="let group">
-      <mat-icon *ngIf="group.expanded">expand_less</mat-icon>
-      <mat-icon *ngIf="!group.expanded">expand_more</mat-icon>
-      <strong>{{group[groupByColumns[group.level - 1]]}}
-        ({{group.totalCounts}})</strong>
-    </mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="groupHeader">
+        <mat-cell *matCellDef="let group">
+            <mat-icon *ngIf="group.expanded">expand_less</mat-icon>
+            <mat-icon *ngIf="!group.expanded">expand_more</mat-icon>
+            <strong>{{group[groupByColumns[group.level - 1]]}}
+                ({{group.totalCounts}})</strong>
+        </mat-cell>
+    </ng-container>
 
-  <mat-row (click)="groupHeaderClick(row)" *matRowDef="let row; columns: ['groupHeader']; when: isGroup"
-           class="mat-cursor"></mat-row>
+    <mat-row (click)="groupHeaderClick(row)" *matRowDef="let row; columns: ['groupHeader']; when: isGroup"
+             class="mat-cursor"></mat-row>
 
 </mat-table>
 

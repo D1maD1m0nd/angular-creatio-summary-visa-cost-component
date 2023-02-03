@@ -1,7 +1,7 @@
 <mat-checkbox
-  (change)="filterColumnService.changeVisibleColumn(column);
+    (change)="filterColumnService.changeVisibleColumn(column);
      column.Checked = !column.Checked"
-  [checked]="column.Checked"
-  [id]="column.ItemCostKey">
-  {{column.Name}}
+    [checked]="column.Checked"
+    [id]="column.ItemCostKey">
+    {{column.Name}}
 </mat-checkbox>

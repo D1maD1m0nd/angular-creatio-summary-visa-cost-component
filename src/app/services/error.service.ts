@@ -2,16 +2,16 @@ import {Injectable} from '@angular/core';
 import {Subject} from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ErrorService {
-  error$ = new Subject<string>()
+    error$ = new Subject<string>()
 
-  handler(message: string) {
-    this.error$.next(message)
-  }
+    handler(message: string) {
+        this.error$.next(message)
+    }
 
-  clear() {
-    this.error$.next('')
-  }
+    clear() {
+        this.error$.next('')
+    }
 }

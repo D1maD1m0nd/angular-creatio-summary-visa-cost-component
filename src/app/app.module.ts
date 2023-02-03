@@ -23,40 +23,41 @@ import {VisaCostTableComponent} from "./components/visa-cost-table/visa-cost-tab
 import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    VltSummaryVisaCostComponent,
-    EditNumericFieldComponent,
-    FilterColumnComponent,
-    TitleVisaComponent,
-    VisaCostTableComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatSortModule,
-    MatTableModule,
-    DragDropModule,
-    MatCheckboxModule,
-    MatCardModule,
-    MatExpansionModule,
-    MatIconModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    HttpClientModule
-  ],
-  providers: [],
-  //bootstrap: [AppComponent],
-  entryComponents: [VltSummaryVisaCostComponent]
+    declarations: [
+        AppComponent,
+        VltSummaryVisaCostComponent,
+        EditNumericFieldComponent,
+        FilterColumnComponent,
+        TitleVisaComponent,
+        VisaCostTableComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatSortModule,
+        MatTableModule,
+        DragDropModule,
+        MatCheckboxModule,
+        MatCardModule,
+        MatExpansionModule,
+        MatIconModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        HttpClientModule
+    ],
+    providers: [],
+    //bootstrap: [AppComponent],
+    entryComponents: [VltSummaryVisaCostComponent]
 })
 export class AppModule implements DoBootstrap {
-  constructor(private injector: Injector) {
-  }
-  ngDoBootstrap(appRef: ApplicationRef): void {
-    const el = createCustomElement(VltSummaryVisaCostComponent, { injector: this.injector });
-    customElements.define('vlt-summary-visa-cost-component', el);
-  }
+    constructor(private injector: Injector) {
+    }
+
+    ngDoBootstrap(appRef: ApplicationRef): void {
+        const el = createCustomElement(VltSummaryVisaCostComponent, {injector: this.injector});
+        customElements.define('vlt-summary-visa-cost-component', el);
+    }
 }

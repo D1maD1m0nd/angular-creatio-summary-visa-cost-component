@@ -3,16 +3,16 @@ import {BehaviorSubject} from "rxjs";
 import {ICostColumn} from "../data/model/response/CostColumn";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class FilteringColumnService {
-  isVisible$ = new BehaviorSubject<ICostColumn | null>(null)
+    isVisible$ = new BehaviorSubject<ICostColumn | null>(null)
 
-  constructor() {
-  }
+    constructor() {
+    }
 
-  changeVisibleColumn(item: ICostColumn) {
-    item.Visible = !item.Visible
-    this.isVisible$.next(item)
-  }
+    changeVisibleColumn(item: ICostColumn) {
+        item.Visible = !item.Visible
+        this.isVisible$.next(item)
+    }
 }
