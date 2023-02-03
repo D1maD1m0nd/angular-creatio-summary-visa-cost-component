@@ -7,6 +7,7 @@ export interface IGetVisaItemsResult {
     CostItemColumn: ICostColumn[];
     CostItemsResult: ICostItem[];
     MetaData: IMetaData;
+
     SummaryData: ISummaryData;
-    Error?: string;
+    Error: string | null;
 }

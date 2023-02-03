@@ -1,29 +1,29 @@
-<div *ngIf="apiService.VisaCostSummary">
-  <button
-    mat-raised-button color="warn"
-    class="save-button">Отменить
-  </button>
-  <button mat-raised-button color="primary"
-          class="save-button"
-          (click)="SendSaveDataIntoServer()"
-  >Сохранить
-  </button>
-  <mat-expansion-panel class="mat-card-check-box expanded-card">
+<div *ngIf="VisaCostSummary">
+    <button
+        mat-raised-button color="warn"
+        class="save-button">Отменить
+    </button>
+    <button mat-raised-button color="primary"
+            class="save-button"
+            (click)="SendSaveDataIntoServer()"
+    >Сохранить
+    </button>
+    <mat-expansion-panel class="mat-card-check-box expanded-card">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Отображаемые колонки
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <mat-card>
-      <mat-card-content class="filter-section">
-        <ng-container *ngFor="let item of apiService.VisaCostSummary.GetVisaItemsResult.CostItemColumn">
-          <vlt-filter-column [column]=item></vlt-filter-column>
-        </ng-container>
-      </mat-card-content>
-    </mat-card>
-  </mat-expansion-panel>
-  <vlt-title-visa [metaData]="apiService.VisaCostSummary.GetVisaItemsResult.MetaData"></vlt-title-visa>
-  <vlt-visa-cost-table [itemsColumnsArg]="apiService.VisaCostSummary.GetVisaItemsResult.CostItemColumn"
-                       [itemCostsArg]="apiService.VisaCostSummary.GetVisaItemsResult.CostItemsResult"></vlt-visa-cost-table>
+        <mat-card>
+            <mat-card-content class="filter-section">
+                <ng-container *ngFor="let item of VisaCostSummary.GetVisaItemsResult.CostItemColumn">
+                    <vlt-filter-column [column]=item></vlt-filter-column>
+                </ng-container>
+            </mat-card-content>
+        </mat-card>
+    </mat-expansion-panel>
+    <vlt-title-visa [metaData]="VisaCostSummary.GetVisaItemsResult.MetaData"></vlt-title-visa>
+    <vlt-visa-cost-table [itemsColumnsArg]="VisaCostSummary.GetVisaItemsResult.CostItemColumn"
+                         [itemCostsArg]="VisaCostSummary.GetVisaItemsResult.CostItemsResult"></vlt-visa-cost-table>
 </div>
 

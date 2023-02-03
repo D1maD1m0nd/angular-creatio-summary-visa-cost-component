@@ -1,8 +1,9 @@
 export interface ICostColumn {
     Name: string,
+    Position: number,
     ItemCostKey: string,
 
     Checked: boolean
-
-  Visible: boolean
+    Edit: boolean;
+    Visible: boolean
 }

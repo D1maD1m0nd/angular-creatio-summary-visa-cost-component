@@ -49,7 +49,7 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  //bootstrap: [AppComponent],
   entryComponents: [VltSummaryVisaCostComponent]
 })
 export class AppModule implements DoBootstrap {
